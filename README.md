@@ -1,70 +1,117 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Dubbing Interface
 
-## Available Scripts
+This is a dubbing interface project that allows users to play a video, record audio, and synchronize both for playback, a video player with a progress bar for seeking, audio recording capabilities, and synchronized playback of both video and recorded audio. The project uses React, TailwindCSS, and WaveSurfer.js for audio visualization.
 
-In the project directory, you can run:
+## Features
 
-### `npm start`
+- Video Player: Play and pause video with a progress bar for seeking.
+- Audio Recorder*: Record audio using the browser's microphone and display a waveform.
+- Synchronization: Play recorded audio and video simultaneously with synchronized playback.
+- Dialogue Section: Display original and translated dialogues with options to navigate between them.
+- Error Handling: Basic error handling for audio/video playback issues.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Project Structure
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+```
+/dubbing-interface
+├── /public
+│   ├── sample-video.mp4
+│   └── index.html
+├── /src
+│   ├── /components
+│   │   ├── AudioRecorder.js
+│   │   ├── Dialogue.js
+│   │   ├── SyncButton.js
+│   │   ├── VideoPlayer.js
+│   │   └── Waveform.js
+│   ├── /context
+│   │   └── DialogueContext.js
+│   ├── App.js
+│   ├── index.css
+│   └── index.js
+├── tailwind.config.js
+├── package.json
+└── package-lock.json
+```
 
-### `npm test`
+## Getting Started
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Follow these instructions to run the project on your local machine.
 
-### `npm run build`
+### Prerequisites
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Node.js (v14.x or later)
+- npm or yarn
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-username/dubbing-interface.git
+   ```
+   
+2. Navigate to the project directory:
+   ```bash
+   cd dubbing-interface
+   ```
 
-### `npm run eject`
+3. Install the required dependencies:
+   ```bash
+   npm install
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+4. Start the development server:
+   ```bash
+   npm start
+   ```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   The application should now be running on `http://localhost:3000`.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### Build for Production
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+To create a production-ready build of the application:
 
-## Learn More
+```bash
+npm run build
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+The build files will be output to the `/build` folder.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Usage
 
-### Code Splitting
+### Video Player
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- The video player allows you to play/pause a video and seek through the video using the progress bar. Place a `sample-video.mp4` in the `/public` folder.
 
-### Analyzing the Bundle Size
+### Audio Recorder
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Start and stop audio recording using your microphone by clicking the "Start Recording" button.
+- A waveform is displayed after recording, allowing you to play back the recorded audio.
 
-### Making a Progressive Web App
+### Sync Playback
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+- After recording the audio, you can use the "Play Synchronized Audio and Video" button to play both the video and recorded audio in sync.
 
-### Advanced Configuration
+### Dialogue Section
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- The `Dialogue` component displays original and translated dialogues.
+- Navigate between dialogues using the "Next Dialogue" button.
 
-### Deployment
+## Built With
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- [React.js](https://reactjs.org/) - A JavaScript library for building user interfaces
+- [TailwindCSS](https://tailwindcss.com/) - A utility-first CSS framework for responsive design
+- [WaveSurfer.js](https://wavesurfer-js.org/) - A JavaScript library for creating interactive waveforms
 
-### `npm run build` fails to minify
+## Contributing
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Feel free to submit issues and pull requests to improve the project. Contributions are always welcome.
+
+## License
+
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
+
+## Acknowledgements
+
+- Special thanks to the creators of React, TailwindCSS, and WaveSurfer.js for their awesome libraries.
